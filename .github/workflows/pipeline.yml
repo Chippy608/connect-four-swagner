@@ -1,0 +1,16 @@
+name: CI/CD Pipeline for the Connect Four Game
+on: push
+jobs: 
+
+    build:    
+        runs-on: ubuntu-latest
+
+        steps: 
+            - name: Setup .Net 7
+              uses: actions/setup-dotnet@v3
+              with:
+                dotnet-version: 7
+            - name: Checkout Repo
+              uses: actions/checkout@v4
+            - name: Build
+              run: dotnet build
